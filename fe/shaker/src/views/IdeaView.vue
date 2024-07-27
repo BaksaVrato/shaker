@@ -1,5 +1,9 @@
 <template>
   <div>
-    <h1>Idea view</h1>
+    <IdeaSearchBar />
   </div>
 </template>
+
+<script setup lang="ts">
+import IdeaSearchBar from "../components/idea-search-bar.vue";
+</script>

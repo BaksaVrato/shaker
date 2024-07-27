@@ -1,5 +1,9 @@
 <template>
   <div>
-    <h1>Recipe view...</h1>
+    <RecipeSearchBar />
   </div>
 </template>
+
+<script setup lang="ts">
+import RecipeSearchBar from "../components/recipe-search-bar.vue";
+</script>
