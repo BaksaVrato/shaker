@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h1 class="text-3xl">This is an home page</h1>
-    <p class="text-xl">This is a paragraph</p>
+    <SiteNav />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import SiteNav from "../components/site-nav.vue";
+</script>

@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <nav>
+      <ul>
+        <button>Recipe</button>
+        <button>Idea</button>
+      </ul>
+    </nav>
+  </div>
+</template>
