@@ -136,6 +136,21 @@ module.exports = {
     },
     caretColor: ({ theme }) => theme("colors"),
     colors: ({ colors }) => ({
+      maroon: {
+        100: "#f6cbd3",
+        200: "#ed92a4",
+        300: "#e1516e",
+        400: "#aa1d39", // default
+        500: "#641122"
+      },
+      light: {
+        100: "#ededed", // default
+        200: "#c4c4c4",
+        300: "#8c8c8c",
+        400: "#4f4f4f",
+        500: "#2b2b2b",
+        600: "#141414", // default
+      },
       inherit: colors.inherit,
       current: colors.current,
       transparent: colors.transparent,
