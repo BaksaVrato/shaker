@@ -1,9 +1,13 @@
-import { Schema, model, Document } from 'mongoose';
+import { Schema, model } from 'mongoose';
 // Models are fancy constructors compiled from Schema definitions
 // Document is instance of its Model
 
 const CocktailRecipeSchema = new Schema({
   name: {
+    type: String,
+    required: true
+  },
+  descreption: {
     type: String,
     required: true
   },
