@@ -1,2 +1,0 @@
-# shaker
-cocktail searching app
