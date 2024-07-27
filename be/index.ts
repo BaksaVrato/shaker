@@ -1,8 +1,9 @@
 console.log('Running...');
 
-const express = require('express');
-const mongoose = require('mongoose');
-
+import express from 'express';
+import { Request, Response } from 'express';
+import mongoose from 'mongoose';
+require('dotenv').config();
 
 const connectDB = require('./db/db');
 
@@ -10,11 +11,10 @@ const app = express();
 
 app.use(express.json());
 
+
 app.get("/", (req: Request, res: Response) => {
-  //res.send("Express + TypeScript Server");
+  res.send("Express + TypeScript Server");
 });
-
-
 
 connectDB();
 
