@@ -1,11 +1,17 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import IdeaView from "../views/IdeaView.vue";
+import RecipeView from "../views/RecipeView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "idea",
+    component: IdeaView,
+  },
+  {
+    path: "/recipe",
+    name: "recipe",
+    component: RecipeView,
   },
 ];
 
