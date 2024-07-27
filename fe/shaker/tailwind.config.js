@@ -137,13 +137,13 @@ module.exports = {
     caretColor: ({ theme }) => theme("colors"),
     colors: ({ colors }) => ({
       maroon: {
-        100: "#f6cbd3",
-        200: "#ed92a4",
+        100: "#f2b5c0",
+        200: "#ea7b91",
         300: "#e1516e",
         400: "#aa1d39", // default
-        500: "#641122"
+        500: "#761428"
       },
-      light: {
+      default: {
         100: "#ededed", // default
         200: "#c4c4c4",
         300: "#8c8c8c",

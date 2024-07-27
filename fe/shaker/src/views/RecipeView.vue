@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <RecipeSearchBar />
+  <div class="w-screen flex justify-center">
+    <RecipeSearchBar class="w-4/5 max-w-screen-sm" />
   </div>
 </template>
 

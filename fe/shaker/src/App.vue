@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen bg-gradient-to-t from-maroon-400 to-maroon-500">
     <SiteNav />
     <router-view />
   </div>
