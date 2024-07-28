@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <IdeaSearchBar />
+  <div class="w-screen flex justify-center">
+    <IdeaSearchBar class="w-4/5 max-w-screen-sm" />
   </div>
 </template>
 
