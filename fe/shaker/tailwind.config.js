@@ -141,7 +141,7 @@ module.exports = {
         200: "#ea7b91",
         300: "#e1516e",
         400: "#aa1d39", // default
-        500: "#761428"
+        500: "#761428",
       },
       default: {
         100: "#ededed", // default
