@@ -11,6 +11,9 @@ const ingredients: string[] = [
   "simple syrup",
   "club soda",
   "orgeat syrup",
+  "lemon juice",
+  "champagne",
+  "orange juice",
   // TODO add more (and reoreder - 1st letter alphabetical)
 ];
 

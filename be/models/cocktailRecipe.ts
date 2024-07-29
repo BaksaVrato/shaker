@@ -7,10 +7,6 @@ const CocktailRecipeSchema = new Schema({
     type: String,
     required: true
   },
-  descreption: {
-    type: String,
-    required: true
-  },
   ingredients: {
     type: [String],
     required: true
