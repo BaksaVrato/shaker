@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="flex mb-3 flex-wrap">
+      <div v-for="f in flterComponents" :key="f" class="mr-3">
+        <FilterComponent :name="f" @click="removeFilterComponent(f)" />
+      </div>
+    </div>
     <div class="flex flex-row">
       <input
         type="text"
@@ -19,7 +24,7 @@
       v-for="i in filteredIngredients.slice(0, 5)"
       :key="i"
     >
-      <IngredientSearchCard :name="i" />
+      <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
     </div>
   </div>
 </template>
@@ -27,10 +32,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import IngredientSearchCard from "./ingredient-search-card.vue";
+import FilterComponent from "./ingredient-filter-component.vue";
 import ingredients from "../assets/ingredients";
 
 const searchResult = ref<string>("");
 const filteredIngredients = ref<string[]>([]);
+const flterComponents = ref<string[]>([]);
 
 const filterIngredients = () => {
   filteredIngredients.value = [];
@@ -45,6 +52,19 @@ const filterIngredients = () => {
   });
   if (searchResult.value === "") {
     filteredIngredients.value = [];
+  }
+};
+
+const addFilterComponent = (name: string) => {
+  if (!flterComponents.value.includes(name)) {
+    flterComponents.value.push(name);
+  }
+};
+
+const removeFilterComponent = (name: string) => {
+  const index = flterComponents.value.indexOf(name);
+  if (index > -1) {
+    flterComponents.value.splice(index, 1);
   }
 };
 </script>
