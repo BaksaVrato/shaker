@@ -3,6 +3,7 @@ console.log('Running...');
 import express from 'express';
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
+const cors = require('cors');
 require('dotenv').config();
 
 const connectDB = require('./db/db');
@@ -10,7 +11,7 @@ const router = require('./routes/router');
 
 const app = express();
 
-app.use(express.json(), router);
+app.use(express.json(), cors(), router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

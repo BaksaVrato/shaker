@@ -27,6 +27,17 @@
     >
       <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
     </div>
+    <div
+      class="flex flex-col mr-24"
+      v-for="i in filteredCocktails"
+      :key="filteredCocktails.indexOf(i)"
+    >
+      <CocktailCard
+        :name="i.name"
+        :ingredients="i.ingredients"
+        :description="i.instructions"
+      />
+    </div>
   </div>
 </template>
 
@@ -34,11 +45,14 @@
 import { ref } from "vue";
 import IngredientSearchCard from "./ingredient-search-card.vue";
 import FilterComponent from "./ingredient-filter-component.vue";
+import CocktailCard from "./cocktail-card.vue";
 import ingredients from "../assets/ingredients";
+import axios from "axios";
 
 const searchResult = ref<string>("");
 const filteredIngredients = ref<string[]>([]);
 const flterComponents = ref<string[]>([]);
+const filteredCocktails = ref<object[]>([]);
 
 const filterIngredients = () => {
   filteredIngredients.value = [];
@@ -69,7 +83,22 @@ const removeFilterComponent = (name: string) => {
   }
 };
 
-const searchIdea = () => {
+const searchIdea = async () => {
   // TODO: Search for ideas
+  console.log("searching for ideas");
+
+  filteredCocktails.value = [];
+
+  await axios
+    .post("http://localhost:3000/searchCocktailIdea", {
+      ingredients: flterComponents.value,
+    })
+    .then((response) => {
+      console.log(response.data);
+      filteredCocktails.value = response.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 </script>
