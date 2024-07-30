@@ -28,7 +28,7 @@
       <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
     </div>
     <div
-      class="flex flex-col mr-24"
+      class="flex flex-col mr-24 gap-4"
       v-for="i in filteredCocktails"
       :key="filteredCocktails.indexOf(i)"
     >
