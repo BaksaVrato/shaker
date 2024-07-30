@@ -7,7 +7,7 @@ const CocktailRecipeSchema = new Schema({
     type: String,
     required: true
   },
-  ingredients: {
+  ingredients: { // alphabetical
     type: [String],
     required: true
   },
@@ -22,4 +22,4 @@ const CocktailRecipeSchema = new Schema({
 
 const Cocktail = model('cocktail', CocktailRecipeSchema);
 
-module.exports = Cocktail;
+export default Cocktail;

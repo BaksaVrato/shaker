@@ -6,11 +6,11 @@ import mongoose from 'mongoose';
 require('dotenv').config();
 
 const connectDB = require('./db/db');
+const router = require('./routes/router');
 
 const app = express();
 
-app.use(express.json());
-
+app.use(express.json(), router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

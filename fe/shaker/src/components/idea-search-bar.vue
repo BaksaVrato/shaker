@@ -15,7 +15,7 @@
       />
       <button
         class="w-24 ml-3 p-4 rounded-3xl bg-gradient-to-r from-maroon-200 to-maroon-300 text-default-100 font-semibold shadow-2xl"
-      >
+        >
         Search
       </button>
     </div>
