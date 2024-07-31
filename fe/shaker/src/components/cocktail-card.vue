@@ -1,10 +1,14 @@
 <template>
   <div
-    class="w-full p-3 rounded-xl bg-gradient-to-br from-white to-default-100 mt-4"
+    class="w-full p-4 rounded-xl bg-gradient-to-br from-white to-default-100 mt-4"
   >
-    <h2>Cocktail name {{ props.name }}</h2>
-    <p>Cocktail ingredients {{ props.ingredients }}</p>
-    <p>Cocktail description {{ props.description }}</p>
+    <h2 class="text-default-400 font-semibold text-2xl">
+      {{ props.name }}
+    </h2>
+    <p class="text-default-300 text-sm mb-3">
+      <b>{{ ingredientsString }}</b>
+    </p>
+    <p class="text-default-500">{{ props.description }}</p>
   </div>
 </template>
 
@@ -16,4 +20,6 @@ const props = defineProps({
   ingredients: Array,
   description: String,
 });
+
+const ingredientsString: string = props.ingredients.join(", ");
 </script>

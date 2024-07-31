@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-8">
     <div class="flex mb-3 flex-wrap">
       <div v-for="f in flterComponents" :key="f" class="mr-3">
         <FilterComponent :name="f" @click="removeFilterComponent(f)" />
@@ -28,7 +28,7 @@
       <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
     </div>
     <div
-      class="flex flex-col mr-24 gap-4"
+      class="flex flex-col gap-4"
       v-for="i in filteredCocktails"
       :key="filteredCocktails.indexOf(i)"
     >
@@ -84,7 +84,6 @@ const removeFilterComponent = (name: string) => {
 };
 
 const searchIdea = async () => {
-  // TODO: Search for ideas
   console.log("searching for ideas");
 
   filteredCocktails.value = [];

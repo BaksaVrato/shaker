@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full text-xs p-2 bg-gradient-to-r from-default-200 to-default-100 rounded-xl mt-3"
+    class="w-full text-xs p-1 bg-gradient-to-r from-default-200 to-default-100 rounded px-2 mt-2"
   >
     <p>{{ props.name }}</p>
   </div>

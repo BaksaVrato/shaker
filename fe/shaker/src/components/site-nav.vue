@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full shadow-xl mb-8">
+  <div class="w-full shadow-xl mb-2">
     <div class="container mx-auto flex justify-center">
       <nav class="w-full max-w-screen-sm">
         <ul class="flex flex-row p-4 gap-3">
