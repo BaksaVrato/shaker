@@ -47,7 +47,7 @@ import IngredientSearchCard from "./ingredient-search-card.vue";
 import FilterComponent from "./ingredient-filter-component.vue";
 import CocktailCard from "./cocktail-card.vue";
 import ingredients from "../assets/ingredients";
-import axios from "axios";
+import cocktails from "../assets/cocktails";
 
 const searchResult = ref<string>("");
 const filteredIngredients = ref<string[]>([]);
@@ -88,16 +88,17 @@ const searchIdea = async () => {
 
   filteredCocktails.value = [];
 
-  await axios
-    .post("http://localhost:3000/searchCocktailIdea", {
-      ingredients: flterComponents.value,
-    })
-    .then((response) => {
-      console.log(response.data);
-      filteredCocktails.value = response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  filteredCocktails.value = cocktails.filter((cocktail) => {
+    return cocktail.ingredients.every((ingredient) =>
+      flterComponents.value.includes(ingredient)
+    );
+  });
+
+  // Log the result or a message if no cocktails were found
+  if (filteredCocktails.value.length === 0) {
+    console.log("Cocktails not found");
+  } else {
+    console.log("Found cocktails:", filteredCocktails.value);
+  }
 };
 </script>
