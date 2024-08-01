@@ -21,11 +21,15 @@
       </button>
     </div>
     <div
-      class="flex flex-col mr-24"
-      v-for="i in filteredIngredients.slice(0, 5)"
-      :key="i"
+      class="absolute w-3/5 max-w-lg bg-gradient-to-r from-white to-default-100 rounded-xl mt-2"
     >
-      <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
+      <div
+        class="flex flex-col"
+        v-for="i in filteredIngredients.slice(0, 5)"
+        :key="i"
+      >
+        <IngredientSearchCard :name="i" @click="addFilterComponent(i)" />
+      </div>
     </div>
     <div
       class="flex flex-col gap-4"
@@ -73,6 +77,8 @@ const filterIngredients = () => {
 const addFilterComponent = (name: string) => {
   if (!flterComponents.value.includes(name)) {
     flterComponents.value.push(name);
+    searchResult.value = "";
+    filteredIngredients.value = [];
   }
 };
 

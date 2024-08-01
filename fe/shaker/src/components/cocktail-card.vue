@@ -6,7 +6,9 @@
       {{ props.name }}
     </h2>
     <p class="text-default-300 text-sm mb-3">
-      <b>{{ ingredientsString }}</b>
+      <i
+        ><b>{{ ingredientsString }}</b></i
+      >
     </p>
     <p class="text-default-500">{{ props.description }}</p>
   </div>
